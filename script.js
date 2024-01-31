@@ -63,7 +63,7 @@ function checkSecretWord() {
             // Correct secret word for given ID
             createConfetti();
             // Show the hint for the current stage
-            document.getElementById("hintSection").style.display = "block";
+            document.getElementById("hintSection").classList.add("show-hint");
             document.getElementById("hintText").innerHTML = stages[id].hint;
         } else {
             // Incorrect secret word
