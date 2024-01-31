@@ -31,6 +31,7 @@ function handleScavengerHuntStage() {
         document.getElementById("secretWordInput").style.display = "block";
         let submitBtn = document.getElementById("submitBtn");
     if (submitBtn) {
+        console.log(submitBtn.innerHTML);
         submitBtn.innerHTML = "Begin Adventure";
     }
     } else if (stages.hasOwnProperty(id)) {
