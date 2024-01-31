@@ -24,14 +24,22 @@ const stages = {
 };
 
 function handleScavengerHuntStage() {
-    var id = getQueryParam("id");
+    let id = getQueryParam("id");
     
     if (!id) {
         document.getElementById("hintText").innerHTML = "Enter the first secret code to begin your adventure.";
         document.getElementById("secretWordInput").style.display = "block";
+        let submitBtn = document.getElementById("submitBtn");
+    if (submitBtn) {
+        submitBtn.innerHTML = "Begin Adventure";
+    }
     } else if (stages.hasOwnProperty(id)) {
         document.getElementById("hintText").innerHTML = "Enter the secret word for the next hint.";
         document.getElementById("submitBtn").innerHTML = "Submit Secret Word";
+        let submitBtn = document.getElementById("submitBtn");
+    if (submitBtn) {
+        submitBtn.innerHTML = "Submit Secret Word";
+    }
     } else {
         document.getElementById("hintText").innerHTML = "Hmm, this doesn't seem right. Are you sure you're at the right stage?";
         document.getElementById("secretWordInput").style.display = "none";
@@ -40,14 +48,14 @@ function handleScavengerHuntStage() {
 }
 
 function checkSecretWord() {
-    var inputWord = document.getElementById("secretWordInput").value.trim();
+    let inputWord = document.getElementById("secretWordInput").value.trim();
 
     if (!getQueryParam("id") && inputWord.toLowerCase() === "marley") {
         createConfetti();
         document.getElementById("hintText").innerHTML = "Here's your first hint: Where mornings start with a brew, find Mantas waiting with your clue. Near the spot where coffee rests, your journey begins on this quest.";
         document.getElementById("hintSection").style.display = "block";
     } else {
-        var id = getQueryParam("id");
+        let id = getQueryParam("id");
         if (id && stages[id] && stages[id].secret.toLowerCase() === inputWord.toLowerCase()) {
             createConfetti();
             document.getElementById("hintSection").classList.add("show-hint");
