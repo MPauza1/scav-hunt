@@ -1,6 +1,6 @@
 body {
     background-color: #b1b1b1; /* Example background color */
-    font-family: 'Arial', sans-serif; /* Preferred font */
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Adjustments for smaller screens */
@@ -9,3 +9,30 @@ body {
         font-size: 24px; /* Smaller font size on small devices */
     }
 }
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.25);
+  }
+
+  .container {
+    padding: 20px;
+  }
+  
+  .secret-word-form input,
+  .secret-word-form button {
+    margin-bottom: 15px; /* Adjust as needed */
+  }
+
+  h1 {
+    font-size: 1.75rem; /* Adjust based on device size */
+  }
+
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+  .form-control {
+    height: 45px; /* Larger touch area */
+    padding: 10px;
+  }  
