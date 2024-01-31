@@ -33,7 +33,6 @@ function handleScavengerHuntStage() {
         document.getElementById("hintText").innerHTML = "Enter the first secret code to begin your adventure.";
         // Show the input field and button to submit the initial secret word
         document.getElementById("secretWordInput").style.display = "block";
-        document.getElementById("submitBtn").style.display = "block";
     } else if (stages.hasOwnProperty(id)) {
         // If a valid ID is provided, prepare for the next secret word
         document.getElementById("hintText").innerHTML = "Enter the secret word for the next hint.";
