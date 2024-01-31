@@ -50,3 +50,7 @@ h1 {
     height: 45px; /* Larger touch area */
     padding: 10px;
 }
+
+.show-hint {
+    display: block !important;
+}
