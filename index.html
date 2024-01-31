@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Welcome to Your Scavenger Hunt!</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1>Happy Birthday, [Name]!</h1>
+        <p>Welcome to your birthday scavenger hunt. Enter the first secret code to begin your adventure.</p>
+        <div class="secret-word-form">
+            <input type="text" id="secretWordInput" class="form-control" placeholder="Enter the first secret code">
+            <button onclick="checkSecretWord()" class="btn btn-primary mt-3">Begin Adventure</button>
+        </div>
+        <!-- Hint Section (initially hidden) -->
+        <div id="hintSection" class="mt-3" style="display:none;">
+            <h2>Next Hint!</h2>
+            <p id="hintText">[The hint will be displayed here after entering the correct secret word]</p>
+        </div>
+    </div>
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+    <!-- Confetti Library -->
+    <script src="
+https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js
+"></script>
+</body>
+</html>
