@@ -34,6 +34,12 @@ body {
   }
 }
 
+.secret-word-form input {
+    background-color: rgb(198, 229, 255);
+    border-color: rgba(0, 173, 255, 1);
+    box-shadow: 0 2px 4px #161616 ;
+}
+
 #submitBtn {
   background-color: black !important;
   border: none;
