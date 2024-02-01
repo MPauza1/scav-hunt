@@ -1,56 +1,68 @@
 body {
-    background-color: #FAFAFA; /* Light gray background */
-    font-family: 'Roboto', sans-serif;
-    color: #333333; /* Dark gray text color */
-    text-align: center; /* Center align all text within the body */
+  background: rgb(13, 0, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(13, 0, 255, 1) 0%,
+    rgba(0, 173, 255, 1) 35%,
+    rgba(248, 131, 121, 1) 100%
+  );
+  font-family: "Roboto", sans-serif;
+  color: #161616; /* Dark gray text color */
+  text-align: center; /* Center align all text within the body */
+  
 }
 
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {
-    /* Center align headings and adjust font size */
-    h1 {
-        font-size: 24px; /* Smaller font size on small devices */
-        margin: 0 auto; /* Center align horizontally */
-        text-align: center; /* Center align text within the element */
-    }
+  /* Center align headings and adjust font size */
+  h1 {
+    font-size: 24px; /* Smaller font size on small devices */
+    margin: 0 auto; /* Center align horizontally */
+    text-align: center; /* Center align text within the element */
+  }
 
-    /* Center align buttons */
-    .btn-primary {
-        display: block; /* Ensure buttons take up full width */
-        margin: 0 auto; /* Center align horizontally */
-    }
+  /* Center align buttons */
+  #submitBtn {
+    display: block; /* Ensure buttons take up full width */
+    margin: 0 auto; /* Center align horizontally */
+  }
 
-    /* Center align form elements */
-    .secret-word-form input,
-    .secret-word-form button {
-        margin: 0 auto; /* Center align horizontally */
-    }
+  /* Center align form elements */
+  .secret-word-form input,
+  .secret-word-form button {
+    margin: 0 auto; /* Center align horizontally */
+  }
 }
 
-.btn-primary {
-    background-color: #007BFF; /* Vibrant blue primary color */
-    border: none;
-    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.25);
-    color: #FFFFFF; /* White text color for buttons */
+#submitBtn {
+  background-color: black !important;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.25);
+  color: #ffffff; /* White text color for buttons */
 }
 
 .container {
-    padding: 20px;
+  padding: 20px;
 }
 
 h1 {
-    font-size: 1.75rem; /* Adjust based on device size */
+  font-size: 1.75rem; /* Adjust based on device size */
+  margin-bottom: 15px;
 }
 
-.btn-primary:active {
-    transform: scale(0.98);
+p {
+    margin-bottom: 15px;
+}
+
+#submitBtn:active {
+  transform: scale(0.98);
 }
 
 .form-control {
-    height: 45px; /* Larger touch area */
-    padding: 10px;
+  height: 45px; /* Larger touch area */
+  padding: 10px;
 }
 
 .show-hint {
-    display: block !important;
+  display: block !important;
 }
