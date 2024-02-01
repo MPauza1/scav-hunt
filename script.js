@@ -39,6 +39,7 @@ function handleScavengerHuntStage() {
             document.getElementById("header_inspire").innerHTML = "Good job on Your first hunt, Auguste!"
         }
         if (stages.hasOwnProperty(id) === 2) {
+            console.log(id);
             document.getElementById("header_inspire").innerHTML = "Do You think You have what it takes?"
         }
         if (stages.hasOwnProperty(id) === 3) {
