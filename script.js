@@ -35,29 +35,29 @@ function handleScavengerHuntStage() {
         submitBtn.innerHTML = "Begin Adventure";
     }
     } else if (stages.hasOwnProperty(id)) {
-        if (stages.hasOwnProperty(id) === 1) {
+        if (id === 1) {
             document.getElementById("header_inspire").innerHTML = "Good job on Your first hunt, Auguste!"
         }
-        if (stages.hasOwnProperty(id) === 2) {
+        if (id === 2) {
             console.log(id);
             document.getElementById("header_inspire").innerHTML = "Do You think You have what it takes?"
         }
-        if (stages.hasOwnProperty(id) === 3) {
+        if (id === 3) {
             document.getElementById("header_inspire").innerHTML = "You wont find this one"
         }
-        if (stages.hasOwnProperty(id) === 4) {
+        if (id === 4) {
             document.getElementById("header_inspire").innerHTML = "That's 4 already. Keep it coming!"
         }
-        if (stages.hasOwnProperty(id) === 5) {
+        if (id === 5) {
             document.getElementById("header_inspire").innerHTML = "Just a little bit further.."
         }
-        if (stages.hasOwnProperty(id) === 6) {
+        if (id === 6) {
             document.getElementById("header_inspire").innerHTML = "Just quit already.."
         }
-        if (stages.hasOwnProperty(id) === 7) {
+        if (id === 7) {
             document.getElementById("header_inspire").innerHTML = "If You don't want Your present, You can quit. :)"
         }
-        if (stages.hasOwnProperty(id) === 8) {
+        if (id === 8) {
             document.getElementById("header_inspire").innerHTML = "Congratulations! You did it. One last push.."
         }
         document.getElementById("p-subheader").innerHTML = "Enter the secret word to read the next hint!"
