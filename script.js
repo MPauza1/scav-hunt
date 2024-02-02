@@ -13,15 +13,18 @@ function createConfetti() {
 }
 
 const stages = {
-    "1": { secret: "Mantas", hint: "Kyra knows where You must peek, in her favorite hide and seek. Look where she purrs and plays, for the next clue in this maze." },
-    "2": { secret: "Kyra", hint: "Under the moon, Luna roams, near her second favorite domes. Search where she naps after play, there Your next clue will lay." },
-    "3": { secret: "Luna", hint: "Kaunas holds memories dear, find the next hint very near. Something or someone dear to You that reminds You of Kaunas has the next clue!" },
-    "4": { secret: "Kaunas", hint: "With BMW, we travel far, look where we park or beneath the car star. Your next clue hides with speed and grace, inside or near our mobile space." },
-    "5": { secret: "BMW", hint: "Bob lights up our night and day, near his glow is where You'll play. Find the clue in his bright embrace, and You'll surely win this race." },
-    "6": { secret: "Bob", hint: "Venom thrives in the shadows, sleek and unseen, search where darkness reigns, for Your clue to gleam. Near the place where night's secrets are kept, there Your next hint has silently crept." },
-    "7": { secret: "Venom", hint: "Groot guards the end, with heart so true, near something green, Your prize awaits You. Find him standing with arms wide spread, where plants or his figure lay their head." },
-    "8": { secret: "Groot", hint: "Final Hint! This is the last clue: Set Your sights on a land where black, red, and gold fly high, in the heart of Europe, under a wide sky. Between the Rhine's flow and the Harz's stand, lies our city, vibrant and grand. Not far from where the Ruhr river bends, amidst valleys and forests, our journey extends. A place where nature and history blend, and hidden paths to green oases wend. In this city, secrets and stories untold, in a country of castles, rivers, and gold. With a map in hand, look where these clues unfold, to find our destination, brave and bold. Now, whisper Your guess into my ear, let's see if our next adventure starts here." },
+    "1": { secret: "Mantas", hint: "Kyra knows where You must peek, in her favorite hide and seek. Look where she pu**r**rs and plays, for the next cl**u**e in this maze." },
+    "2": { secret: "Kyra", hint: "Under the moon, Luna roams, near her second favorite domes. Search where she naps after play, there Your next clue w**i**ll lay." },
+    "3": { secret: "Luna", hint: "Kaunas holds memories dear, find the next h**i**nt very near. Something or someone dear to You that reminds You of Kaunas has the next clue!" },
+    "4": { secret: "Kaunas", hint: "With B**M**W, we travel far, look where we park or beneath the car star. Your next cl**u**e hides with speed and grace, inside or near our mobile space." },
+    "5": { secret: "BMW", hint: "Bo**b** lights up our night and day, near his glow is where You'll play. Find the cl**u**e in his bright embrace, and You'll surely win this race." },
+    "6": { secret: "Bob", hint: "Ve**n**om thrives in the shadows, sleek and unseen, search where darkness reigns, for Your clue to gleam. Near the place where night's secrets are kept, there Your next h**i**nt has silently crept." },
+    "7": { secret: "Venom", hint: "Gr**o**ot guards the end, with heart so true, near something green, Your prize awaits You. Find him standing with arms wide spread, where plants or his figure lay their head." },
+    "8": { secret: "Groot", hint: "Congratulations on reaching the final stage! To continue, think of a European country with vibrant cities, diverse cultures, and a rich history. It's known for its love of sausages, castles, and beautiful landscapes. Guess the name of this c**o**untry to unlock the next part of your adventure. Also, the last QR is somewhere in Mantas' pockets. Try asking him nicely, maybe he will give it to You. :)" },
+    "9": { secret: "Germany", hint: "You're on the right track! To complete your adventure, you'll need to guess the city in Germany where your journey ends. Enter the city's name to reveal the final destination." }
 };
+
+
 
 const stageTextTemplates = {
     "1": "Good job on Your first hunt, Auguste!",
