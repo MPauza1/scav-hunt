@@ -13,18 +13,25 @@ function createConfetti() {
 }
 
 const stages = {
-    "1": { secret: "Mantas", hint: "Kyra knows where You must peek, in her favorite hide and seek. Look where she pu**r**rs and plays, for the next cl**u**e in this maze." },
-    "2": { secret: "Kyra", hint: "Under the moon, Luna roams, near her second favorite domes. Search where she naps after play, there Your next clue w**i**ll lay." },
-    "3": { secret: "Luna", hint: "Kaunas holds memories dear, find the next h**i**nt very near. Something or someone dear to You that reminds You of Kaunas has the next clue!" },
-    "4": { secret: "Kaunas", hint: "With B**M**W, we travel far, look where we park or beneath the car star. Your next cl**u**e hides with speed and grace, inside or near our mobile space." },
-    "5": { secret: "BMW", hint: "Bo**b** lights up our night and day, near his glow is where You'll play. Find the cl**u**e in his bright embrace, and You'll surely win this race." },
-    "6": { secret: "Bob", hint: "Ve**n**om thrives in the shadows, sleek and unseen, search where darkness reigns, for Your clue to gleam. Near the place where night's secrets are kept, there Your next h**i**nt has silently crept." },
-    "7": { secret: "Venom", hint: "Gr**o**ot guards the end, with heart so true, near something green, Your prize awaits You. Find him standing with arms wide spread, where plants or his figure lay their head." },
-    "8": { secret: "Groot", hint: "Congratulations on reaching the final stage! To continue, think of a European country with vibrant cities, diverse cultures, and a rich history. It's known for its love of sausages, castles, and beautiful landscapes. Guess the name of this c**o**untry to unlock the next part of your adventure. Also, the last QR is somewhere in Mantas' pockets. Try asking him nicely, maybe he will give it to You. :)" },
-    "9": { secret: "Germany", hint: "You're on the right track! To complete your adventure, you'll need to guess the city in Germany where your journey ends. Enter the city's name to reveal the final destination." }
+    "1": { secret: "Mantas", hint: "Kyra knows where You must peek, in her favorite hide and seek. Look where she pu<strong>r</strong>rs and plays, for the next clue in this maze." },
+    "2": { secret: "Kyra", hint: "Under the moon, Luna roams, near her second favorite <strong>d</strong>omes. Search where she naps after play, there Your next clue will lay." },
+    "3": { secret: "Luna", hint: "Kaunas holds memories dear, find the next hint very near. Something or someone dear to You that reminds You of Kaunas has <strong>t</strong>he next clue!" },
+    "4": { secret: "Kaunas", hint: "With B<strong>M</strong>W, we travel far, look where we park or beneath the car star. Your next cl**u**e hides with speed and grace, inside or near our mobile space." },
+    "5": { secret: "BMW", hint: "Bob lights up our night and day, near his glow is where You'll play. Find the cl<strong>u</strong>e in his bright embrace, and You'll surely win this race." },
+    "6": { secret: "Bob", hint: "Ve<strong>n</strong>om thrives in the shadows, sleek and unseen, search where darkness reigns, for Your clue to gleam. Near the place where night's secrets are kept, there Your next h**i**nt has silently crept." },
+    "7": { secret: "Venom", hint: "Gr<strong>o</strong>ot guards the end, with heart so true, near something green, Your prize awaits You. Find him standing with arms wide spread, where plants or his figure lay their head." },
+    "8": { secret: "Groot", hint: "Congratulations on reaching the final stage! To continue, think of a European country with vibrant cities, <strong>d</strong>iverse cultures, and a rich history. It's known for its love of sausages, castles, and beautiful landscapes. Guess the name of this country to unlock the next part of your adventure. Also, the last QR is somewhere in Mantas' pockets. Try asking him nicely, maybe he will give it to You. :)" },
+    "9": {
+        secret: "Germany",
+        hint: "You're on the right track! To complete your adventure, you'll need to guess the city in Germany where your journey ends. Enter the city's name to reveal the final destination.",
+        hangman: {
+            word: "DORTMUND",
+            guessedLetters: [],
+            maxAttempts: 6,
+            attempts: 0,
+        },
+    },
 };
-
-
 
 const stageTextTemplates = {
     "1": "Good job on Your first hunt, Auguste!",
@@ -87,18 +94,69 @@ function checkSecretWord() {
 }
 
 
-document.onkeydown=function(e){
-    if(window.e.keyCode=='13'){
-        checkSecretWord();
-    }
-}
-
-
 window.onload = function() {
     handleScavengerHuntStage();
 };
 
+function handleHangmanFormSubmission(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
 
+    const stage = stages["9"];
+    const hangman = stage.hangman;
 
+    // Get the input value (guessed letter or word)
+    const input = document.getElementById("hangmanInput").value.trim().toUpperCase();
+
+    if (input.length === 1 && /^[A-Z]$/.test(input)) {
+        // If the input is a single uppercase letter, check if it matches any letter in the word
+        if (stage.secret.includes(input)) {
+            hangman.guessedLetters.push(input); // Add the guessed letter to the array
+        } else {
+            hangman.attempts++; // Increment the attempts if the guessed letter is not in the word
+        }
+    } else if (input === stage.secret) {
+        // If the input is the entire word "DORTMUND," the game is won
+        stage.wordGuessed = true;
+    }
+
+    // Display the hangman game
+    displayHangman();
+
+    // Clear the input field
+    document.getElementById("hangmanInput").value = "";
+}
+
+// Add an event listener for form submission in ID=9
+const hangmanForm = document.getElementById("hangmanForm");
+if (hangmanForm) {
+    hangmanForm.addEventListener("submit", handleHangmanFormSubmission);
+}
+
+// Function to display the hangman game
+function displayHangman() {
+    const stage = stages["9"];
+    const hangman = stage.hangman;
+    const word = stage.secret;
+
+    // Check if the player has guessed the entire word
+    if (word === "DORTMUND" && hangman.guessedLetters.length === 7) {
+        stage.wordGuessed = true;
+    }
+
+    // Display the hangman form in stage 9
+    if (getQueryParam("id") === "9" && !stage.wordGuessed) {
+        document.getElementById("hangmanForm").style.display = "block";
+    } else {
+        document.getElementById("hangmanForm").style.display = "none";
+    }
+
+    // Display the hangman game only if the word is guessed
+    if (stage.wordGuessed) {
+        console.log("Congratulations! You've guessed the word.");
+        // You can add logic here to proceed to the next stage or display a success message.
+    }
+}
+
+// ... (remaining code)
 
 

@@ -21,6 +21,13 @@
             <h2>Next Hint!</h2>
             <p id="hintText">[The hint will be displayed here after entering the correct secret word]</p>
         </div>
+        <!-- Add this input element to your HTML -->
+<form id="hangmanForm" style="display: none;">
+    <label for="hangmanInput">Guess a letter or the word:</label>
+    <input type="text" id="hangmanInput" maxlength="1" style="text-transform: uppercase;">
+    <button type="submit">Submit</button>
+</form>
+
     </div>
     <script src="script.js"></script>
     <script src="
