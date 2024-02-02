@@ -47,7 +47,7 @@ const stages = {
   },
   9: {
     secret: "Germany",
-    hint: "In the heart of Europe, nestled between vibrant cities, you'll find this German gem. Known for its rich history, diverse culture, and love of sausages, it's a place where black, red, and gold fly high. Discover it amidst valleys, forests, and hidden paths, where nature and history blend into a tapestry of secrets and stories untold. And don't forget to visit its renowned zoo, home to a fascinating array of wildlife from around the world. This city is a treasure waiting to be uncovered on your adventure! Hint: In all the stages of the game there was one letter that was different from the others.. Did You catch them? If not, scan the QR's again and search for them. The letters combine to the destination of our journey. But it won't be that easy. Good that You have such a smart guy like Mantas beside You. Don't be afraid to ask for his help. :)",
+    hint: "In the heart of Europe, nestled between vibrant cities, you'll find this German gem. Known for its rich history, diverse culture, and love of sausages, it's a place where black, red, and gold fly high. Discover it amidst valleys, forests, and hidden paths, where nature and history blend into a tapestry of secrets and stories untold. And don't forget to visit its renowned zoo, home to a fascinating array of wildlife from around the world. This city is a treasure waiting to be uncovered on your adventure! <br> Hint: In all the stages of the game there was one letter that was different from the others.. Did You catch them? If not, scan the QR's again and search for them. The letters combine to the destination of our journey. But it won't be that easy. Good that You have such a smart guy like Mantas beside You. Don't be afraid to ask for his help. :)",
   },
 };
 
@@ -60,7 +60,7 @@ const stageTextTemplates = {
   6: "Just quit already..",
   7: "If You don't want Your present, You can quit. :)",
   8: "Congratulations! You did it. One last push..",
-  9: "I didn't think You would get here. Good job! :)"
+  9: "I didn't think You would get here. Good job! :)",
 };
 
 function handleScavengerHuntStage() {

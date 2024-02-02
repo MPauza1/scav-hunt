@@ -9,8 +9,13 @@ body {
   font-family: "Roboto", sans-serif;
   color: #161616; /* Dark gray text color */
   text-align: center; /* Center align all text within the body */
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Center vertically within the viewport */
+  margin: 0; /* Remove default margin to center horizontally */
 }
+
 
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {
