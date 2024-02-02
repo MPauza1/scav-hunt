@@ -23,52 +23,42 @@ const stages = {
     "8": { secret: "Groot", hint: "Final Hint! This is the last clue: Set Your sights on a land where black, red, and gold fly high, in the heart of Europe, under a wide sky. Between the Rhine's flow and the Harz's stand, lies our city, vibrant and grand. Not far from where the Ruhr river bends, amidst valleys and forests, our journey extends. A place where nature and history blend, and hidden paths to green oases wend. In this city, secrets and stories untold, in a country of castles, rivers, and gold. With a map in hand, look where these clues unfold, to find our destination, brave and bold. Now, whisper Your guess into my ear, let's see if our next adventure starts here." },
 };
 
+const stageTextTemplates = {
+    "1": "Good job on Your first hunt, Auguste!",
+    "2": "Do You think You have what it takes?",
+    "3": "You wont find this one",
+    "4": "That's 4 already. Keep it coming!",
+    "5": "Just a little bit further..",
+    "6": "Just quit already..",
+    "7": "If You don't want Your present, You can quit. :)",
+    "8": "Congratulations! You did it. One last push.."
+};
+
 function handleScavengerHuntStage() {
     let id = getQueryParam("id");
-    
+
     if (!id) {
-        document.getElementById("hintText").innerHTML = "Enter the first secret code to begin Your adventure.";
+        // If no 'id' parameter is present in the URL, display default text.
         document.getElementById("secretWordInput").style.display = "block";
         let submitBtn = document.getElementById("submitBtn");
-    if (submitBtn) {
-        console.log(submitBtn.innerHTML);
-        submitBtn.innerHTML = "Begin Adventure";
-    }
+        if (submitBtn) {
+            console.log(submitBtn.innerHTML);
+            submitBtn.innerHTML = "Begin Adventure";
+        }
     } else if (stages.hasOwnProperty(id)) {
-        if (id === 1) {
-            document.getElementById("header_inspire").innerHTML = "Good job on Your first hunt, Auguste!"
-        }
-        if (id === 2) {
-            console.log(id);
-            document.getElementById("header_inspire").innerHTML = "Do You think You have what it takes?"
-        }
-        if (id === 3) {
-            document.getElementById("header_inspire").innerHTML = "You wont find this one"
-        }
-        if (id === 4) {
-            document.getElementById("header_inspire").innerHTML = "That's 4 already. Keep it coming!"
-        }
-        if (id === 5) {
-            document.getElementById("header_inspire").innerHTML = "Just a little bit further.."
-        }
-        if (id === 6) {
-            document.getElementById("header_inspire").innerHTML = "Just quit already.."
-        }
-        if (id === 7) {
-            document.getElementById("header_inspire").innerHTML = "If You don't want Your present, You can quit. :)"
-        }
-        if (id === 8) {
-            document.getElementById("header_inspire").innerHTML = "Congratulations! You did it. One last push.."
-        }
-        document.getElementById("p-subheader").innerHTML = "Enter the secret word to read the next hint!"
+        // If 'id' parameter matches a stage, display the corresponding template text.
+        const template = stageTextTemplates[id] || ""; // Use the template or an empty string if not found
+        document.getElementById("header_inspire").innerHTML = template;
+        document.getElementById("p-subheader").innerHTML = "Enter the secret word to read the next hint!";
         document.getElementById("hintText").innerHTML = "Enter the secret word for the next hint.";
         document.getElementById("submitBtn").innerHTML = "Submit Secret Word";
         let submitBtn = document.getElementById("submitBtn");
-    if (submitBtn) {
-        submitBtn.innerHTML = "Submit Secret Word";
-    }
+        if (submitBtn) {
+            submitBtn.innerHTML = "Submit Secret Word";
+        }
     } else {
-        document.getElementById("hintText").innerHTML = "Hmm, this doesn't seem right. Are You sure You're at the right stage?";
+        // If 'id' parameter doesn't match any stage, display an error message.
+        document.getElementById("header_inspire").innerHTML = "Hmm, this doesn't seem right. Are You sure You're at the right stage?";
         document.getElementById("secretWordInput").style.display = "none";
         document.getElementById("submitBtn").style.display = "none";
     }
